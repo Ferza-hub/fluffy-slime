@@ -11,7 +11,15 @@ export default function Hero({ onStart }){
           </p>
         </div>
         <div>
-          <button className="cta" onClick={onStart}>Cek Channel Saya</button>
+          <button
+            type="button"
+            className="cta"
+            onClick={() => {
+              if (typeof onStart === 'function') onStart()
+            }}
+          >
+            Cek Channel Saya
+          </button>
         </div>
       </div>
     </section>

@@ -45,11 +45,9 @@ export default function App(){
 
   return (
     <div className={`container ${step === 'landing' ? 'landing-center' : ''}`}>
-      <Hero onStart={startJourney} />
+      {step === 'landing' && <Hero onStart={startJourney} />}
 
       <div className="step-view">
-        {step === 'landing' && <div className="empty-state" />}
-
         {step === 'channel' && (
           <div className="card screen-card channel-screen">
             <ChannelCheck onConnect={handleConnect} />
